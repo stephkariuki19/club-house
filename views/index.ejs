@@ -15,5 +15,15 @@
     <a href="/login">
       <button>LOG IN</button>
     </a>
+    <div class="index-container">
+      <% messages.forEach(message => { %>
+        <div class="message">
+          <h2><%= message.title %></h2>
+          <p><%= message.message %></p>
+          <p>Sign in join club to see who wrote a message and when </p>
+
+        </div>
+      <% }) %>
+    </div>
   </body>
 </html>

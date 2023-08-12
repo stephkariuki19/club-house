@@ -9,8 +9,8 @@ async function createUser(req,res,next){
         bcrypt.hash(password,saltRounds,async(err,hashedPassword)=>{
             if(err){
                 return next(err);
-            } //00
-            const user = await User.findOne({email});
+            } 
+            const user = await User.findOne({username});
             if (!user){
                 if(password===confirmation){
                     const newUser = new User({

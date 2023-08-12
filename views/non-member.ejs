@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <title>CLUB HOUSE</title>
+</head>
+<body>
+    <h1>Non member</h1>
+    <a href="/logout">
+        <button>LOG OUT</button>
+    </a>
+    <a href="/new-message"><button>WRITE A MESSAGE</button></a>
+    <p>Become a member to see other usernames an an admin to be able to delete messages</p>
+    <button>JOIN CLUB</button>
+    <button>BECOME ADMIN</button>
+
+    <p>Messages</p>
+    <div class="nonmember-container">
+        <% messages.forEach(message => { %>
+          <div class="message">
+            <h2><%= message.title %></h2>
+            <p><%= message.message %></p>
+            <p>Sign in join club to see who wrote a message and when </p>
+  
+          </div>
+        <% }) %>
+      </div>
+
+</body>
+</html>
