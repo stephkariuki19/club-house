@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = Schema({
-    name: {
+    username: {
         type: String,
         required: [true, 'Name is required'],
         trim: true,
@@ -56,6 +56,6 @@ const messageSchema = Schema(
   
 
 const User = mongoose.model("User", userSchema);
-const Message = mongoose.model("Message", messageSchemaSchema);
+const Message = mongoose.model("Message", messageSchema);
 
 module.exports = User,Message
