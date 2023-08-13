@@ -21,6 +21,9 @@ var signupRouter = require("./routes/signup");
 var loginRouter = require("./routes/login");
 var nonMemberRouter = require("./routes/nonmember.js");
 var createRouter = require("./routes/create.js");
+var memberRouter = require("./routes/member.js");
+var adminRouter = require("./routes/admin.js");
+
 
 var app = express();
 
@@ -57,6 +60,10 @@ app.use("/login", loginRouter);
 app.use("/signup", signupRouter);
 app.use("/non-member", nonMemberRouter);
 app.use("/new-message", createRouter);
+app.use("/member", memberRouter);
+app.use("/admin",adminRouter);
+
+
 
 
 app.get("/logout", (req, res, next) => {

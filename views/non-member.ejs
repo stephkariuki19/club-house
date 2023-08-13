@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,21 +13,28 @@
         <button>LOG OUT</button>
     </a>
     <a href="/new-message"><button>WRITE A MESSAGE</button></a>
-    <p>Become a member to see other usernames an an admin to be able to delete messages</p>
-    <button>JOIN CLUB</button>
-    <button>BECOME ADMIN</button>
+    <p>Become a member to see other usernames and an admin to be able to delete messages</p>
+   
+    <% if (!is_member) { %>
+        <a href="/member">
+            <button>JOIN CLUB</button>
+        </a>
+    <% } %>
 
     <p>Messages</p>
     <div class="nonmember-container">
         <% messages.forEach(message => { %>
-          <div class="message">
-            <h2><%= message.title %></h2>
-            <p><%= message.message %></p>
-            <p>Sign in join club to see who wrote a message and when </p>
-  
-          </div>
+            <div class="message">
+                <h2><%= message.title %></h2>
+                <p><%= message.message %></p>
+                <% if (is_member) { %>
+                    <p>Written by <%= message.author.username %> on <%= message.createdAt %></p>
+                <% } else { %>
+                    <p>Sign in to join the club to see who wrote a message and when</p>
+                <% } %>
+            </div>
         <% }) %>
-      </div>
+    </div>
 
 </body>
 </html>
