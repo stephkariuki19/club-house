@@ -20,7 +20,7 @@ router.get('/', async function(req, res, next) {
   }
 });
 
-router.post('/delete-message/:id', async function(req, res, next) {
+router.delete('/delete-message/:id', async function(req, res, next) {
   try {
       const messageId = req.params.id;
       await Messages.findByIdAndDelete(messageId);

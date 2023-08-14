@@ -6,6 +6,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const bcrypt = require('bcrypt'); // Require bcrypt for password hashing
+const methodOverride = require('method-override');
 
 
 const connectDB = require("./config/db.js");
@@ -26,6 +27,7 @@ var adminRouter = require("./routes/admin.js");
 
 
 var app = express();
+app.use(methodOverride('_method', { methods: ['POST', 'GET'] }));
 
 connectDB();
 

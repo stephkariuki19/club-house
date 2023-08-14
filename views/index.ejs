@@ -2,28 +2,43 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-
-    <a href="/signup">
-      <button>SIGN UP</button>
-    </a>
-
-    <a href="/login">
-      <button>LOG IN</button>
-    </a>
+    <nav>
+      <div>      
+        <h1>Club  <span>House</span>👕</h1>
+      </div>
+      <div class="index-links">
+        <a href="/signup">
+          <button>SIGN UP</button>
+        </a>
+    
+        <a href="/login">
+          <button>LOG IN</button>
+        </a>
+      </div>
+      
+    </nav>
+    
     <div class="index-container">
+      <h2 class="index-title">MESSAGES</h2>
       <% messages.forEach(message => { %>
         <div class="message">
-          <h2><%= message.title %></h2>
-          <p><%= message.message %></p>
-          <p>Sign in join club to see who wrote a message and when </p>
+          <h2 class="message-title"><%= message.title %></h2>
+          <p class="message-body"><%= message.message %></p>
+          <p class="message-prompt">Sign in join club to see who wrote a message and when </p>
 
         </div>
       <% }) %>
     </div>
+    <footer>
+      <h4>Made by         <a href="https://github.com/stephkariuki19">Steph</a>
+        with <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>cards-heart</title><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" /></svg></span></h4>
+    </footer>
+    
   </body>
 </html>
