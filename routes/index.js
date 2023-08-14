@@ -18,7 +18,6 @@ const Messages = require('../models/messageModel')
 router.get('/', async function(req, res, next) {
   try {
     const messages = await Messages.find({}, 'title message');
-    console.log(messages); // Add this line to check the fetched messages in the console
     res.render('index', { title: 'Express', messages: messages });
   } catch (err) {
     next(err);

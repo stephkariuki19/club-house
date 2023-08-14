@@ -21,8 +21,14 @@
         </a>
     <% } %>
 
+    <% if (!is_admin) { %>
+        <a href="/admin">
+            <button>BECOME ADMIN</button>
+        </a>
+    <% } %>
+
     <p>Messages</p>
-    <div class="nonmember-container">
+    <div class="member-container">
         <% messages.forEach(message => { %>
             <div class="message">
                 <h2><%= message.title %></h2>
@@ -30,7 +36,12 @@
                 <% if (is_member) { %>
                     <p>Written by <%= message.author.username %> on <%= message.createdAt %></p>
                 <% } else { %>
-                    <p>Sign in to join the club to see who wrote a message and when</p>
+                    <p>Sign in and  join the club to see who wrote a message and when</p>
+                <% } %>
+
+                <% if (is_admin) { %>
+                        <button>DELETE</button>
+                    
                 <% } %>
             </div>
         <% }) %>
