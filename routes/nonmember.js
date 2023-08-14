@@ -20,4 +20,14 @@ router.get('/', async function(req, res, next) {
   }
 });
 
+router.post('/delete-message/:id', async function(req, res, next) {
+  try {
+      const messageId = req.params.id;
+      await Messages.findByIdAndDelete(messageId);
+      res.redirect('/non-member');
+  } catch (err) {
+      next(err);
+  }
+});
+
 module.exports = router;

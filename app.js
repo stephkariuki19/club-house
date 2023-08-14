@@ -58,11 +58,10 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/login", loginRouter);
 app.use("/signup", signupRouter);
-app.use("/non-member", nonMemberRouter);
 app.use("/new-message", createRouter);
 app.use("/member", memberRouter);
 app.use("/admin",adminRouter);
-
+app.use("/non-member", nonMemberRouter);
 
 
 
