@@ -3,8 +3,6 @@
   --white: #fff;
  --grey:#fbfbfb;
 }
-
-
 *{
   margin: 0px;
   box-sizing: border-box;
@@ -42,14 +40,13 @@ nav h1{
 .index-container{
   background-color: var(--grey);
   padding-bottom: 10px;
-  border: 1px solid green;
+  padding: 10px;
 }
 .index-title{
   text-align: center;
   color: var(--main-color);
 }
 .message{
-  border:1px solid red;
   background-color: var(--white);
   margin: 10px;
   min-width:150px;
@@ -62,6 +59,9 @@ nav h1{
 }
 .message-body::first-letter {
   text-transform: uppercase;
+}
+.message-prompt{
+  color: var(--main-color);
 }
 footer {
   display: flex;
@@ -103,9 +103,111 @@ footer svg:hover{
   text-align: center;
   color: var(--main-color);
   margin: 5px;
+  margin-bottom: 10px;
 }
-form{
-  border: 1px solid red;
+.login-form{
   background-color: var(--white);
+  padding: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: rgba(71, 75, 255, 0.075) 0px 2px 3px 0px;
+
+}
+.login-form div{
+  margin: 20px;
+}
+.login-form input{
+outline: none;
+border: none;
+border-bottom: 1px solid black;
+width: 70%;
+}
+.login-form input:focus{
+  border-bottom: 1px solid var(--main-color);
+}
+.login-form button{
+  color: var(--white);
+  background-color: var(--main-color);
+  border: none;
+  width: 90px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 5px;
+  position: relative;
+  left: 35%;
+}
+/*SIGN UP PAGE*/
+
+.sign-up-container{
+  background-color: var(--grey);
+  height: 100vh;
+}
+.sign-up-container h1{
+  text-align: center;
+  color: var(--main-color);
+  margin: 5px;
+  margin-bottom: 10px;
+}
+.sign-up-form{
+  background-color: var(--white);
+  padding: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: rgba(71, 75, 255, 0.075) 0px 2px 3px 0px;
+
+}
+.sign-up-form div{
+  margin: 20px;
+}
+.sign-up-form input{
+outline: none;
+border: none;
+border-bottom: 1px solid black;
+width: 70%;
+}
+.sign-up-form input:focus{
+  border-bottom: 1px solid var(--main-color);
+}
+.sign-up-form button{
+  color: var(--white);
+  background-color: var(--main-color);
+  border: none;
+  min-width: 90px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 5px;
+  position: relative;
+  left: 35%;
+}
+/*MESSAGES VIEW*/
+.gen-view button{
+  width: 140px;
+}
+.members-corner-title{
+  color: var(--main-color);
+  margin: 5px;
+  text-align: center;
+}
+.members-rem{
+  text-align: center;
+  margin: 5px;
+}
+.gen-view-container{
+  padding-bottom: 10px;
   padding: 10px;
+}
+.message-body{
+  margin-bottom: 5px;
+}
+.delete{
+  color: var(--white);
+  background-color: var(--main-color);
+  border: none;
+  height: 30px;
+  width: 80px;
+  border-radius: 5px;
+  margin: 10px;
+  
 }

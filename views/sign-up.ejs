@@ -5,32 +5,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <title>SIGN UP</title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<title>SIGN UP</title>
 </head>
 <body>
+    <div class="sign-up-container">
     <h1>SIGN UP PAGE</h1>
-    <form action="/signup" method="POST">
+    <form  class="sign-up-form"   action="/signup" method="POST">
         <div>
             <label for="username">Username</label>
-            <input name="username" placeholder="username" type="text" />
+            <input name="username" placeholder=" enter username" type="text" />
         </div>
 
         <div>
             <label for="email">Email Address</label>
-            <input name="email" placeholder="email address" type="email" />
+            <input name="email" placeholder=" enter email address" type="email" />
         </div>
        
         <div>
             <label for="password">Password</label>
-            <input name="password" type="password" />
+            <input name="password" type="password" placeholder="enter password" />
         </div>
 
         <div>
             <label for="password">Confirm password</label>
-            <input name="confirmation" type="password" />
+            <input name="confirmation" type="password" placeholder="confirm password" />
         </div>
         
         <button>Sign Up</button>
       </form>
+    </div>
 </body>
 </html>

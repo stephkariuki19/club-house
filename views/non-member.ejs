@@ -10,12 +10,20 @@
     <title>CLUB HOUSE</title>
 </head>
 <body>
-    <h1>Non member</h1>
-    <a href="/logout">
-        <button>LOG OUT</button>
-    </a>
-    <a href="/new-message"><button>WRITE A MESSAGE</button></a>
-    <p>Become a member to see other usernames and an admin to be able to delete messages</p>
+    <div class="gen-view-container">
+    <nav class="gen-view">
+        <div>
+            <h1>Members <span>Corner</span>👕</h1>
+        </div>
+
+        <div>
+            <a href="/logout">
+                <button>LOG OUT</button>
+            </a>
+            <a href="/new-message"><button>WRITE A MESSAGE</button></a>
+        </div>
+    </nav>
+   
    
     <% if (!is_member) { %>
         <a href="/member">
@@ -29,14 +37,16 @@
         </a>
     <% } %>
 
-    <p>Messages</p>
+    <h2 class="members-corner-title">MESSAGES</h2>
+    <p class ="members-rem">Become a member to see other usernames and an admin to be able to delete messages</p>
+
     <div class="member-container">
         <% messages.forEach(message => { %>
             <div class="message">
-                <h2><%= message.title %></h2>
-                <p><%= message.message %></p>
+                <h2 class="message-title"><%= message.title %></h2>
+                <p class="message-body"><%= message.message %></p>
                 <% if (is_member) { %>
-                    <p>Written by <%= message.author.username %> on <%= message.createdAt %></p>
+                    <p class="message-prompt">Written by <%= message.author.username %> on <%= message.createdAt %></p>
                 <% } else { %>
                     <p>Sign in and  join the club to see who wrote a message and when</p>
                 <% } %>
@@ -44,7 +54,7 @@
                 <% if (is_admin) { %>
                     
                     <form action="/non-member/delete-message/<%= encodeURIComponent(message._id) %>/?_method=DELETE" method="POST">
-                        <button type="submit">DELETE</button>
+                        <button class="delete" type="submit">DELETE</button>
                     </form>
                     
                     
@@ -52,6 +62,10 @@
             </div>
         <% }) %>
     </div>
-
+    <footer>
+        <h4>Made by         <a href="https://github.com/stephkariuki19">Steph</a>
+          with <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>cards-heart</title><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" /></svg></span></h4>
+      </footer>
+    </div>
 </body>
 </html>
