@@ -209,5 +209,45 @@ width: 70%;
   width: 80px;
   border-radius: 5px;
   margin: 10px;
-  
+}
+/*ADMIN AND MEMBER SECRETS*/
+.admin-container, .member-container,.error-container{
+background-color: var(--grey);
+height: 100vh;
+}
+.admin-container,.member-container h1{
+  margin: 10px;
+  color: var(--main-color);
+  text-align: center;
+}
+.admin-secret-form,.member-secret-form{
+  background-color: var(--white);
+  padding: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: rgba(71, 75, 255, 0.075) 0px 2px 3px 0px;
+}
+.admin-secret-form,.member-secret-form div{
+  margin: 20px;
+}
+.admin-secret-form,.member-secret-form input{
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 70%;
+}
+.admin-secret-form,.member-secret-form input:focus{
+  border-bottom: 1px solid var(--main-color);
+}
+.admin-secret-form,.member-secret-form button{
+  color: var(--white);
+  background-color: var(--main-color);
+  border: none;
+  min-width: 90px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 5px;
+  position: relative;
+  left: 35%;
 }
